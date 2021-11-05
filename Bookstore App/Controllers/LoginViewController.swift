@@ -19,6 +19,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         userIDTextField.delegate = self
         passwordTextField.delegate = self
         invalidLabel.isHidden = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
     }
 
     @IBAction func loginPressed(_ sender: UIButton) {
@@ -39,6 +43,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         userIDTextField.endEditing(true)
         passwordTextField.endEditing(true)
         return true
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }

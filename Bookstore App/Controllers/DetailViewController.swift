@@ -49,7 +49,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         
         view.addGestureRecognizer(tap)
-        
     }
     
     func fetchBooks(){
